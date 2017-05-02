@@ -12,8 +12,8 @@ app.use(express.static("public"));
 
 // Database configuration
 // Save the URL of our database as well as the name of our collection
-var databaseUrl = "zoo";
-var collections = ["animals"];
+var databaseUrl = "barter";
+var collections = ["traders"];
 
 // Use mongojs to hook the database to the db variable
 var db = mongojs(databaseUrl, collections);
@@ -33,7 +33,7 @@ app.get("/", function(req, res) {
 // 2. At the "/all" path, display every entry in the barter collection
 app.get("/all", function(req, res) {
   // Query: In our database, go to the barter collection, then "find" everything
-  db.animals.find({}, function(error, found) {
+  db.traders.find({}, function(error, found) {
     // Log any errors if the server encounters one
     if (error) {
       console.log(error);
