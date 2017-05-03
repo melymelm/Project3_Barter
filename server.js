@@ -2,10 +2,18 @@
 // Dependencies
 var express = require("express");
 var mongojs = require("mongojs");
+var passport = require('passport');
+
+
+require('./config/passport')(passport);
 
 
 // Initialize Express
 var app = express();
+
+// Passport init
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Set up a static folder (public) for our web app
 app.use(express.static("public"));
