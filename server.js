@@ -3,6 +3,7 @@
 var express = require("express");
 var mongojs = require("mongojs");
 var passport = require('passport');
+var mongoose = require('mongoose');
 
 
 require('./config/passport')(passport);
@@ -19,7 +20,7 @@ app.use(passport.session());
 app.use(express.static("public"));
 
 //MongoDB Config
-mongoose.connect("localhost:27017/nytreact");
+mongoose.connect("localhost:27017/barter");
 var db = mongoose.connection;
 
 // Database configuration
