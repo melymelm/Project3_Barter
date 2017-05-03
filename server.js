@@ -18,6 +18,10 @@ app.use(passport.session());
 // Set up a static folder (public) for our web app
 app.use(express.static("public"));
 
+//MongoDB Config
+mongoose.connect("localhost:27017/nytreact");
+var db = mongoose.connection;
+
 // Database configuration
 // Save the URL of our database as well as the name of our collection
 var databaseUrl = "barter";
