@@ -14,7 +14,7 @@
 // 1: On Load
 // ==========
 // The first thing this js file will do: ask the back end for a json with all traders
-$.getJSON("/all", function(data) {
+$.getJSON("/submit", function(data) {
   // For each entry of that json...
   for (var i = 0; i < data.length; i++) {
     // Append each of the traders' properties to the table

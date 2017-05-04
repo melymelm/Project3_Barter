@@ -1,16 +1,24 @@
 
 // Dependencies
 var express = require("express");
-var mongojs = require("mongojs");
+var logger = require('morgan');
 var passport = require('passport');
+var mongojs = require("mongojs");
 var mongoose = require('mongoose');
+// Set mongoose to leverage built in JavaScript ES6 Promises
+mongoose.Promise = Promise;
 
+// Require our userModel model
+var Trader = require("./models/trader1.js");
 
 require('./config/passport')(passport);
 
 
 // Initialize Express
 var app = express();
+
+// Use morgan with our app
+app.use(logger("dev"));
 
 // Passport init
 app.use(passport.initialize());
@@ -20,7 +28,7 @@ app.use(passport.session());
 app.use(express.static("public"));
 
 //MongoDB Config
-mongoose.connect("localhost:27017/barter");
+mongoose.connect("mongodb://localhost:27017/barter");
 var db = mongoose.connection;
 
 // Database configuration
@@ -36,43 +44,82 @@ db.on("error", function(error) {
   console.log("Database Error:", error);
 });
 
+db.once("open", function() {
+  console.log("Mongoose connection successful.")
+});
+
+// Routes
+// ======
+
+app.post("/submit", function(req, res) {
+
+  var user = new Trader(req.body);
+
+
+/* OUR CUSTOM METHODS
+ * (methods created in the userModel.js)
+ * -/-/-/-/-/-/-/-/-/ */
+
+  // Call the "getFullName" method from the user Model
+  user.getFullName();
+
+  // Call the "lastUpdatedDate" method from the user Model
+  user.lastUpdatedDate();
+
+// END OF CUSTOM METHODS
+// =====================
+// NORMAL METHOD BELOW
+
+  // save a user to our mongoDB
+  user.save(function(error, doc) {
+    // send an error to the browser
+    if (error) {
+      res.send(error);
+    }
+    // or send the doc to our browser
+    else {
+      res.send(doc);
+    }
+  });
+});
+
 
 // Routes
 // 1. At the root path, send a simple hello world message to the browser
-app.get("/", function(req, res) {
-  res.send("Hello world");
-});
+// app.get("/", function(req, res) {
+//   res.send(index.html);
+// });
 
-// 2. At the "/all" path, display every entry in the barter collection
-app.get("/all", function(req, res) {
-  // Query: In our database, go to the barter collection, then "find" everything
-  db.traders.find({}, function(error, found) {
-    // Log any errors if the server encounters one
-    if (error) {
-      console.log(error);
-    }
-    // Otherwise, send the result of this query to the browser
-    else {
-      res.json(found);
-    }
-  });
-});
+// // 2. At the "/all" path, display every entry in the barter collection
+// app.get("/all", function(req, res) {
+//   // Query: In our database, go to the barter collection, then "find" everything
+//   db.traders.find({}, function(error, found) {
+//     // Log any errors if the server encounters one
+//     if (error) {
+//       console.log(error);
+//     }
+//     // Otherwise, send the result of this query to the browser
+//     else {
+//       res.json(found);
+//     }
+//   });
+// });
 
-// 3. At the "/name" path, display every entry in the barter collection, sorted by name
-app.get("/name", function(req, res) {
-  // Query: In our database, go to the barter collection, then "find" everything,
-  // but this time, sort it by name (1 means ascending order)
-  db.traders.find().sort({ name: 1 }, function(error, found) {
-    // Log any errors if the server encounters one
-    if (error) {
-      console.log(error);
-    }
-    // Otherwise, send the result of this query to the browser
-    else {
-      res.json(found);
-    }
-  });
-});
+// // 3. At the "/name" path, display every entry in the barter collection, sorted by name
+// app.get("/name", function(req, res) {
+//   // Query: In our database, go to the barter collection, then "find" everything,
+//   // but this time, sort it by name (1 means ascending order)
+//   db.traders.find().sort({ name: 1 }, function(error, found) {
+//     // Log any errors if the server encounters one
+//     if (error) {
+//       console.log(error);
+//     }
+//     // Otherwise, send the result of this query to the browser
+//     else {
+//       res.json(found);
+//     }
+//   });
+// });
 
 // No weight path. 
 // 4. At the "/weight" path, display every entry in the barter collection, sorted by weight
@@ -90,6 +137,8 @@ app.get("/name", function(req, res) {
 //     }
 //   });
 // });
+
+
 
 // Set the app to listen on port 3000
 app.listen(3000, function() {
