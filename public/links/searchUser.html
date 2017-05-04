@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SEARCH USER</title>
+
+  <!-- Bootstrap Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="../style.css">
+
+<script src="https://code.jquery.com.jquery.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<main>
+    <header>
+      <h1 id="logo"><a href="">TANDEM</a></h1>
+      <nav>
+        <ul>
+          <li class="active"><a href="../index.html">Home</a></li>
+          <li><a href="Intro.html">Intro</a></li>
+          <li><a href="trade.html">Trade</a></li>
+          <li><a href="createAccount.html">Create Account</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="responsive">
+        <span class="open">Navigation</span>
+        <ul>
+          <li class="active"><a href="../index.html">Home</a></li>
+          <li><a href="Intro.html">Intro</a></li>
+          <li><a href="trade.html">Trade</a></li>
+          <li><a href="createAccount.html">Create Account</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <form action="" class="search">
+        <input type="submit" value="" />
+        <input type="search" placeholder="Search..." />
+       </form>
+    </header>
+    
+                                          <!-- This is where React will load out HTML contents -->
+                                          <div id="app"></div>
+
+                                          <!-- This is where all of out JS will get loaded -->
+                                          <script src="bundle.js"></script>
+
+                                          <!-- search page:
+                                                  categories search input
+                                                  results container
+                                                  category list on the side -->
+
+    <section class="product grid1">
+      <!-- <a href=""><img src="https://thumb7.shutterstock.com/display_pic_with_logo/2393219/526524595/stock-photo-illustration-bear-on-a-tandem-bike-on-a-white-background-symbol-can-be-used-for-t-shirts-print-526524595.jpg" alt="" /></a> -->
+      <div class="info">
+        <div class="categoryList">
+        <h1>Category List</h1>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>etc</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <section class="graphic grid2">
+      <div class="statics">
+        <div class="searchUserForm"> 
+          <h1>USER SEARCH FORMS</h1>
+            <form action="" class="searchUser">
+            <br>
+              <input type="text" placeholder="Username?" /><br>
+              <input type="text" placeholder="Rating?" /><br>
+              <input type="text" placeholder="Service?" /><br>
+            <br>  
+            </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="basket grid2">
+      <div class= "resultsContainer">  
+      <h1>RESULTS</h1>
+      <ul>
+        <li>
+          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ4PPGAWZlZJX-8jOI8BBVtT9KDZGb29ftDitO_mHVg7wNv0ce9" alt="" />
+          <h2>RESULT 1</h2>
+          <a href="" class="remove">[Remove]</a>
+          <p>Hello World</p>
+        </li>
+        <li>
+          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ4PPGAWZlZJX-8jOI8BBVtT9KDZGb29ftDitO_mHVg7wNv0ce9" alt="" />
+          <h2>RESULT 2</h2>
+          <a href="" class="remove">[Remove]</a>
+          <p>Hello World</p>
+        </li>
+        <li>
+          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ4PPGAWZlZJX-8jOI8BBVtT9KDZGb29ftDitO_mHVg7wNv0ce9" alt="" />
+          <h2>RESULT 3</h2>
+          <a href="" class="remove">[Remove]</a>
+          <p>Hello World</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+      
+
+  <footer>
+      <h4>Tandem</h4>
+      <ul class="social">
+        <li><a href=""><img src="http://i.imgur.com/xUT72NF.png" alt="" /></a></li>
+        <li><a href=""><img src="http://i.imgur.com/yWRhsGj.png" alt="" /></a></li>
+        <li><a href=""><img src="http://i.imgur.com/xpE7R2R.png" alt="" /></a></li>
+        <li><a href=""><img src="http://i.imgur.com/feGu0Ls.png" alt="" /></a></li>
+      </ul>
+  </footer>
+</main>
+
+</body>
+</html>
