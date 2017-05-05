@@ -68,34 +68,9 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-// Including dependencies
-// var React = require('react');
-// var ReactDom = require('react-dom');
-
-// Create a render function. This will take a set of HTML and then deploy into our index.html file.
-// ReactDom.render(
-// 	<p>Hello World!</p>,
-// 	document.getElementById('app')
-// )
-
-/* Front-End
- * ========================= */
-
-// 1: On Load
-// ==========
-// The first thing this js file will do: ask the back end for a json with all traders
-$.getJSON("/submit", function (data) {
-  // For each entry of that json...
-  for (var i = 0; i < data.length; i++) {
-    // Append each of the traders' properties to the table
-    $("#results").append("<tr><td>" + data[i].name + "</td>" + "<td>" + data[i].business + "</td>" + "<td>" + data[i].category + "</td>" + "<td>" + data[i].address + "</td>" + "<td>" + data[i].phone + "</td>" + "<td>" + data[i].rating + "</td></tr>");
-  }
-});
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/melissamunson/Desktop/Assignments/Project3_Barter/package.json'\n    at Object.fs.openSync (fs.js:558:18)\n    at Object.fs.readFileSync (fs.js:468:33)\n    at ConfigChainBuilder.addConfig (/Users/melissamunson/Desktop/Assignments/Project3_Barter/node_modules/babel-core/lib/transformation/file/options/build-config-chain.js:146:32)\n    at ConfigChainBuilder.findConfigs (/Users/melissamunson/Desktop/Assignments/Project3_Barter/node_modules/babel-core/lib/transformation/file/options/build-config-chain.js:102:30)\n    at buildConfigChain (/Users/melissamunson/Desktop/Assignments/Project3_Barter/node_modules/babel-core/lib/transformation/file/options/build-config-chain.js:61:13)\n    at OptionManager.init (/Users/melissamunson/Desktop/Assignments/Project3_Barter/node_modules/babel-core/lib/transformation/file/options/option-manager.js:354:58)\n    at File.initOptions (/Users/melissamunson/Desktop/Assignments/Project3_Barter/node_modules/babel-core/lib/transformation/file/index.js:212:65)\n    at new File (/Users/melissamunson/Desktop/Assignments/Project3_Barter/node_modules/babel-core/lib/transformation/file/index.js:135:24)\n    at Pipeline.transform (/Users/melissamunson/Desktop/Assignments/Project3_Barter/node_modules/babel-core/lib/transformation/pipeline.js:46:16)\n    at transpile (/Users/melissamunson/Desktop/Assignments/Project3_Barter/node_modules/babel-loader/lib/index.js:48:20)\n    at Object.module.exports (/Users/melissamunson/Desktop/Assignments/Project3_Barter/node_modules/babel-loader/lib/index.js:163:20)");
 
 /***/ })
 /******/ ]);
