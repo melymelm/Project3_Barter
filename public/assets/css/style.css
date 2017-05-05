@@ -1,0 +1,176 @@
+/*
+FONTS FOR PAGE:
+font-family: 'Cuprum', sans-serif;
+font-family: 'Pathway Gothic One', sans-serif;
+font-family: 'Economica', sans-serif;
+font-family: 'Khand', sans-serif;
+*/
+
+body {
+	font-family: 'Khand', sans-serif;
+}
+
+.nav {
+	font-size: 20px;
+}
+
+h1 {
+	font-family: 'Khand', sans-serif;
+	color: #000000;
+}
+
+h2 {
+	font-family: 'Khand', sans-serif;
+	font-size: 35px;
+}
+
+h3 {
+	font-size: 25px;
+}
+
+div {
+	display: box;
+}
+
+a {
+	color: #DF3232;
+}
+
+a:hover { 
+    color: #FF9900;
+}
+
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+#navImg {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+hr.style-one {
+  margin-top: 2em;
+  padding: 0;
+  border: none;
+  border-top: 5px dashed #808080;
+  color: #999;
+  text-align: left;
+}
+
+hr.style-one:after {
+  content: url(../images/tandem_bike2_100x53.jpg);
+  display: inline-block;
+  position: relative;
+  top: -3.7em;
+  font-size: 1em;
+  padding: 0 0.25em;
+  background: white;
+}
+
+hr.style-two {
+  margin-top: 2em;
+  padding: 0;
+  border: none;
+  border-top: 5px dashed #808080;
+  color: #999;
+  text-align: center;
+}
+
+hr.style-two:after {
+  content: url(../images/tandem_bike2_100x53.jpg);
+  display: inline-block;
+  position: relative;
+  top: -3.7em;
+  font-size: 1em;
+  padding: 0 0.25em;
+  background: white;
+}
+
+hr.style-three {
+  margin-top: 2em;
+  padding: 0;
+  border: none;
+  border-top: 5px dashed #808080;
+  color: #999;
+  text-align: right;
+}
+
+hr.style-three:after {
+  content: url(../images/tandem_bike2_100x53.jpg);
+  display: inline-block;
+  position: relative;
+  top: -3.7em;
+  font-size: 1em;
+  padding: 0 0.25em;
+  background: white;
+}
+
+/*#logoText {
+	background-image: url(../images/ps_neutral.png)
+}*/
+
+/* MAIN PAGE */
+
+#logoImage {
+	width: 500px;
+	margin-top: 150px;
+	margin-bottom: 175px;
+	margin-left: 125px;
+	/*margin-right: 60px;*/
+}
+
+#mainText {
+	font-family: 'Khand', sans-serif;
+	font-size: 35px;
+	width: 500px;
+	margin-top: 150px;
+	margin-bottom: 175px;
+	/*margin-left: 50px;*/
+	margin-right: 25px;
+}
+
+#videoPanel {
+	/*width: 1100px;*/
+	margin-top: 100px;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	margin-right: 0;
+}
+
+#vidChat {
+	margin-top: 150px;
+	margin-bottom: 20px;
+	margin-left: 25px;
+	margin-right: 50px;
+}
+
+#serviceImages {
+	margin-top: 100px;
+	margin-bottom: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#myFooter {
+	margin-top: 50px;
+	margin-bottom: 25px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+h2.logo {
+	margin-left: 40px;
+}
+
+/* JOIN PAGE */
+#joinForm {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 100px;
+	margin-right: 100px;
+}
+
