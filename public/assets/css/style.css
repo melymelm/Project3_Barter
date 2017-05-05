@@ -174,3 +174,16 @@ h2.logo {
 	margin-right: 100px;
 }
 
+/* SEARCH PAGE */
+
+td {
+	text-align: center;
+	padding: 40px;
+}
+
+#searchSection {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 150px;
+	margin-right: 100px;
+}
