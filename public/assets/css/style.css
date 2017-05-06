@@ -117,8 +117,8 @@ hr.style-three:after {
 
 #logoImage {
 	width: 500px;
-	margin-top: 150px;
-	margin-bottom: 175px;
+	margin-top: 115px;
+	margin-bottom: 115px;
 	margin-left: 125px;
 	/*margin-right: 60px;*/
 }
@@ -127,8 +127,8 @@ hr.style-three:after {
 	font-family: 'Khand', sans-serif;
 	font-size: 35px;
 	width: 500px;
-	margin-top: 150px;
-	margin-bottom: 175px;
+	margin-top: 115px;
+	margin-bottom: 115px;
 	/*margin-left: 50px;*/
 	margin-right: 25px;
 }
@@ -151,14 +151,14 @@ hr.style-three:after {
 #serviceImages {
 	margin-top: 100px;
 	margin-bottom: 50px;
-	margin-left: 10px;
+	margin-left: 175px;
 	margin-right: 10px;
 }
 
 #myFooter {
 	margin-top: 50px;
 	margin-bottom: 25px;
-	margin-left: 50px;
+	margin-left: 215px;
 	margin-right: 50px;
 }
 
@@ -174,3 +174,22 @@ h2.logo {
 	margin-right: 100px;
 }
 
+/* SEARCH PAGE */
+
+td {
+	text-align: center;
+	padding: 40px;
+}
+
+#searchSection {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 150px;
+	margin-right: 100px;
+}
+
+/* OUR TEAM PAGE */
+
+/*.circleImage {
+    border-radius: 50%;
+}*/
