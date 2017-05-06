@@ -5,11 +5,14 @@ var logger = require('morgan');
 var passport = require('passport');
 var mongojs = require("mongojs");
 var mongoose = require('mongoose');
+//var Trader = mongoose.model('Trader');
+
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
 // Require our userModel model
 var Trader = require("./models/trader1.js");
+var Trader = mongoose.model('Trader');
 
 require('./config/passport')(passport);
 
@@ -37,7 +40,7 @@ var databaseUrl = "barter";
 var collections = ["traders"];
 
 // Use mongojs to hook the database to the db variable
-var db = mongojs(databaseUrl, collections);
+// var db = mongojs(databaseUrl, collections);
 
 // This makes sure that any errors are logged if mongodb runs into an issue
 db.on("error", function(error) {
@@ -86,24 +89,24 @@ app.post("/submit", function(req, res) {
 
 // Routes
 // 1. At the root path, send a simple hello world message to the browser
-// app.get("/", function(req, res) {
-//   res.send(index.html);
-// });
+app.get("/", function(req, res) {
+  res.send(index.html);
+});
 
-// // 2. At the "/all" path, display every entry in the barter collection
-// app.get("/all", function(req, res) {
-//   // Query: In our database, go to the barter collection, then "find" everything
-//   db.traders.find({}, function(error, found) {
-//     // Log any errors if the server encounters one
-//     if (error) {
-//       console.log(error);
-//     }
-//     // Otherwise, send the result of this query to the browser
-//     else {
-//       res.json(found);
-//     }
-//   });
-// });
+// 2. At the "/all" path, display every entry in the barter collection
+app.get("/all", function(req, res) {
+  // Query: In our database, go to the barter collection, then "find" everything
+  db.traders.find({}, function(error, found) {
+    // Log any errors if the server encounters one
+    if (error) {
+      console.log(error);
+    }
+    // Otherwise, send the result of this query to the browser
+    else {
+      res.json(found);
+    }
+  });
+});
 
 // // 3. At the "/name" path, display every entry in the barter collection, sorted by name
 // app.get("/name", function(req, res) {
