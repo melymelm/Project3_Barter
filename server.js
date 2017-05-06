@@ -5,14 +5,14 @@ var logger = require('morgan');
 var passport = require('passport');
 var mongojs = require("mongojs");
 var mongoose = require('mongoose');
-//var Trader = mongoose.model('Trader');
+var path = require('path');
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
 // Require our userModel model
 var Trader = require("./models/trader1.js");
-var Trader = mongoose.model('Trader');
+// var Trader = mongoose.model('Trader');
 
 require('./config/passport')(passport);
 
@@ -90,7 +90,8 @@ app.post("/submit", function(req, res) {
 // Routes
 // 1. At the root path, send a simple hello world message to the browser
 app.get("/", function(req, res) {
-  res.send(index.html);
+  res.sendFile(path.join(__dirname, "./public/main.html"));
+  // res.render("./links/index.html");
 });
 
 // 2. At the "/all" path, display every entry in the barter collection
