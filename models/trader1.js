@@ -45,6 +45,6 @@ TraderSchema.methods.lastUpdatedDate = function() {
 	return this.lastUpdated;
 }
 
-var Trader = mongoose.model("Trader", TraderSchema);
+var Traders = mongoose.model("Traders", TraderSchema);
 
-module.exports = Trader;
+module.exports = Traders;

@@ -11,7 +11,7 @@ var path = require('path');
 mongoose.Promise = Promise;
 
 // Require our userModel model
-var Trader = require("./models/trader1.js");
+var Traders = require("./models/trader1.js");
 // var Trader = mongoose.model('Trader');
 
 require('./config/passport')(passport);
@@ -38,9 +38,6 @@ var db = mongoose.connection;
 // Save the URL of our database as well as the name of our collection
 var databaseUrl = "barter";
 var collections = ["traders"];
-
-// Use mongojs to hook the database to the db variable
-// var db = mongojs(databaseUrl, collections);
 
 // This makes sure that any errors are logged if mongodb runs into an issue
 db.on("error", function(error) {
@@ -97,14 +94,61 @@ app.get("/", function(req, res) {
 // 2. At the "/all" path, display every entry in the barter collection
 app.get("/all", function(req, res) {
   // Query: In our database, go to the barter collection, then "find" everything
-  db.traders.find({}, function(error, found) {
+  Traders.find({}, function(error, dataFound) {
     // Log any errors if the server encounters one
     if (error) {
       console.log(error);
     }
     // Otherwise, send the result of this query to the browser
     else {
-      res.json(found);
+      res.json(dataFound);
+    }
+  });
+});
+
+
+// here get the category the user clicks on, music, food, sports, coding, education, etc...in the request parameter. and then make the mongo call.
+app.get('/categories/:category', function (req, res) {
+
+  console.log(req.params);
+// var category =
+// make the mongo query/call to fina all users that have that category that the user is searching for.
+  Traders.find(req.params, function(error, dataFound) {
+    // Log any errors if the server encounters one
+    if (error) {
+      console.log(error);
+    }
+    // Otherwise, send the result of this query to the browser
+    else {
+      res.json(dataFound);
+    }
+  });
+// categories should be an array of the specialties offered in our db
+
+// figure out how to send the info back to the front end
+
+// might be best to go with handlebars
+
+
+
+  // res.send("Hit categories route"); 
+
+})
+// Grab a trader by it's ObjectId
+app.get("/traders/:id", function(req, res) {
+  // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
+  Traders.findOne({ "_id": req.params.id })
+  // ..and populate all of the notes associated with it
+  .populate("note")
+  // now, execute our query
+  .exec(function(error, doc) {
+    // Log any errors
+    if (error) {
+      console.log(error);
+    }
+    // Otherwise, send the doc to the browser as a json object
+    else {
+      res.json(doc);
     }
   });
 });
