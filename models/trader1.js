@@ -12,6 +12,11 @@ var TraderSchema = new Schema({
 		trim: true,
 		required: "Last Name is Required"
 	},
+	businessName: {
+		type: String,
+		trim: true,
+		required: "Business Service Required"
+	},
 	email: {
 		type: String,
 		unique: true,
@@ -27,7 +32,17 @@ var TraderSchema = new Schema({
 		},
 		"Password should be 6 characters or longer."
 		] 
-},
+	},
+	zipCode: {
+		type: String,
+		trim: true,
+		required: "Zip Code is Required"
+	},
+	phoneNumber: {
+		type: String,
+		trim: true,
+		required: "Phone Number is Required"
+	},
 lastUpdated: { type: Date },
 fullName: String
 });
