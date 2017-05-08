@@ -48,7 +48,6 @@
 		        <li><a href="/join">Join</a></li>
 		        <li><a href="/login">Log In</a></li>
 		        <li><a href="/search">Search</a></li>
-		        <li><a href="/account">Your Account</a></li>
 		        <li><a href="/team">Our Team</a></li>
 		    </ul>
 		  </div>
@@ -68,14 +67,14 @@
 	    <div class="form-group">
 	      <label for="firstName" class="col-lg-2 control-label">FIRST NAME</label>
 		      <div class="col-lg-10">
-		        <input type="text" class="form-control" id="inputFirst" placeholder="First Name">
+		        <input type="text" class="form-control" id="inputFirst" placeholder="Jane">
 		      </div>
 	    </div>
 
 	    <div class="form-group">
 	      <label for="inputLast" class="col-lg-2 control-label">LAST NAME</label>
 		      <div class="col-lg-10">
-		        <input type="text" class="form-control" id="inputLast" placeholder="Last Name"> 
+		        <input type="text" class="form-control" id="inputLast" placeholder="Doe"> 
 		      </div>
 	    </div>
 
@@ -89,7 +88,7 @@
 	    <div class="form-group">
 	      <label for="inputEmail" class="col-lg-2 control-label">EMAIL</label>
 		      <div class="col-lg-10">
-		        <input type="text" class="form-control" id="inputEmail" placeholder="Email"> 
+		        <input type="text" class="form-control" id="inputEmail" placeholder="jane@jane.com"> 
 		      </div>
 	    </div>
 
@@ -108,16 +107,16 @@
 	    </div>
 
 	    <div class="form-group">
-	      <label for="inputAddress" class="col-lg-2 control-label">ADDRESS</label>
-	      <div class="col-lg-10">
-	        <input type="password" class="form-control" id="inputAddress" placeholder="Address">
-	      </div>
+	      <label for="inputZipcode" class="col-lg-2 control-label">ZIP CODE</label>
+		      <div class="col-lg-10">
+		        <input type="text" class="form-control" id="inputZip" placeholder="12345"> 
+		      </div>
 	    </div>
 
-	    <div class="form-group">
+	 	<div class="form-group">
 	      <label for="inputPhone" class="col-lg-2 control-label">PHONE NUMBER</label>
 	      <div class="col-lg-10">
-	        <input type="password" class="form-control" id="inputPhone" placeholder="(XXX) XXX-XXXX">
+	        <input type="text" class="form-control" id="inputPhone" placeholder="(XXX) XXX-XXXX">
 	      </div>
 	    </div>
 
@@ -128,13 +127,13 @@
 		<div class="form-group">
 	      <label for="select" class="col-lg-2 control-label">SERVICES I CAN BARTER:</label>
 	      <div class="col-lg-10">
-	        <select multiple="" class="form-control">
-	          <option>Music Lessons (EX: Guitar, Piano)</option>
-	          <option>Gardening</option>
-	          <option>Baking / Cooking</option>
-	          <option>Coding / UI Design</option>
-	          <option>Building / Construction</option>
-	          <option>Sports Lessons (EX: Tennis, Golf)</option>
+	        <select multiple="" class="form-control" id="servSelect" name="servSelect">
+	          <option value="1">Music Lessons (EX: Guitar, Piano)</option>
+	          <option value="2">Gardening</option>
+	          <option value="3">Baking / Cooking</option>
+	          <option value="4">Coding / UI Design</option>
+	          <option value="5">Building / Construction</option>
+	          <option value="6">Sports Lessons (EX: Tennis, Golf)</option>
 	        </select>
 	      </div>
 	    </div>
@@ -175,7 +174,7 @@
                 <div class="col-sm-2">
                     <h5>Get started</h5>
                     <ul>
-                        <li><a href="/home">Home</a></li>
+                        <li><a href="/main">Home</a></li>
                         <li><a href="/join">Join</a></li>
                         <li><a href="/login">Log In</a></li>
                     </ul>
