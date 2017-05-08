@@ -1,9 +1,9 @@
 
 // Dependencies
 var express = require("express");
+var bodyParser = require('body-parser');
 var logger = require('morgan');
 var passport = require('passport');
-var mongojs = require("mongojs");
 var mongoose = require('mongoose');
 var path = require('path');
 
@@ -22,6 +22,8 @@ var app = express();
 
 // Use morgan with our app
 app.use(logger("dev"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 
 // Passport init
 app.use(passport.initialize());
@@ -55,9 +57,11 @@ db.once("open", function() {
 // Routes
 // ======
 
-app.post("/submit", function(req, res) {
+app.post("/api/signup", function(req, res) {
+  console.log(req.body);
 
-  var user = new Trader(req.body);
+  var user = new Traders(req.body);
+  console.log('new trader: ' + JSON.stringify(user));
 
 
 /* OUR CUSTOM METHODS
@@ -78,6 +82,7 @@ app.post("/submit", function(req, res) {
   user.save(function(error, doc) {
     // send an error to the browser
     if (error) {
+      console.log('user save error: ' + error);
       res.send(error);
     }
     // or send the doc to our browser
