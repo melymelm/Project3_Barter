@@ -43,6 +43,11 @@ var TraderSchema = new Schema({
 		trim: true,
 		required: "Phone Number is Required"
 	},
+	category: {
+		type: String,
+		trim: true,
+		required: "You must have something to offer to join."
+	},
 lastUpdated: { type: Date },
 fullName: String
 });

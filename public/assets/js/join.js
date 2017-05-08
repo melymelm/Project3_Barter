@@ -2,6 +2,24 @@ $(document).ready(function() {
 
   console.log("join.js: Inside ready function");
 
+    $.get({
+      url: "/api/categories",
+      success: function(data) {
+        console.log(data);
+        updateCategories(data);
+
+      }
+    })
+
+function updateCategories (categories){
+    var select = $('#servSelect');
+    select.empty();
+      categories.forEach(function(category) {
+          $('<option value="' + category.name + '">').html(
+          category.title).appendTo(select);
+        });
+}
+
   var firstNameInput = $("#inputFirst");
   var lastNameInput = $("#inputLast");
   var businessNameInput = $("#inputBusinessName");
@@ -9,7 +27,7 @@ $(document).ready(function() {
   var zipInput = $("#inputZip");
   var phoneNumberInput = $("#inputPhone");
   var emailInput = $("#inputEmail");
-
+  var servSelect = $("#servSelect")
   var passInput = $("#inputPassword1");
   var passInput2 = $("#inputPassword2");
  
@@ -31,6 +49,7 @@ $(document).ready(function() {
       phoneNumber: phoneNumberInput.val().trim(),
       email: emailInput.val().trim(),
       password: passInput.val().trim(),
+      category: servSelect.val(),
     };
 
     console.log(signupData);

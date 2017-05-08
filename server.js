@@ -143,6 +143,42 @@ app.get('/categories/:category', function (req, res) {
   // res.send("Hit categories route"); 
 
 })
+
+// here get the category the user clicks on, music, food, sports, coding, education, etc...in the request parameter. and then make the mongo call.
+app.get('/api/categories', function (req, res) {
+
+  console.log(req.params);
+// var category =
+// make the mongo query/call to fina all users that have that category that the user is searching for.
+  var dataFound = [{
+        name: "music",
+        title: "Music Lessons (EX: Guitar, Piano)"
+      },
+      {
+        name: "landscaping",
+        title: "Gardening"
+      },
+      {  
+        name: "cooking",
+        title: "Baking / Cooking"
+      },
+      {
+        name: "computers",
+        title: "Coding / UI Design" 
+      },
+      {
+        name: "repairs",
+        title: "Build / Constructing"
+      },
+      {
+       name: "sports",
+       title: "Sports Lessons (EX: Tennis, Golf)"
+      }
+      ];
+  res.json(dataFound); 
+
+});
+
 // Grab a trader by it's ObjectId
 app.get("/traders/:id", function(req, res) {
   // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
