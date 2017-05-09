@@ -12,6 +12,11 @@ var TraderSchema = new Schema({
 		trim: true,
 		required: "Last Name is Required"
 	},
+	businessName: {
+		type: String,
+		trim: true,
+		required: "Business Service Required"
+	},
 	email: {
 		type: String,
 		unique: true,
@@ -27,7 +32,22 @@ var TraderSchema = new Schema({
 		},
 		"Password should be 6 characters or longer."
 		] 
-},
+	},
+	zipCode: {
+		type: String,
+		trim: true,
+		required: "Zip Code is Required"
+	},
+	phoneNumber: {
+		type: String,
+		trim: true,
+		required: "Phone Number is Required"
+	},
+	category: {
+		type: String,
+		trim: true,
+		required: "You must have something to offer to join."
+	},
 lastUpdated: { type: Date },
 fullName: String
 });
@@ -45,6 +65,6 @@ TraderSchema.methods.lastUpdatedDate = function() {
 	return this.lastUpdated;
 }
 
-var Trader = mongoose.model("Trader", TraderSchema);
+var Traders = mongoose.model("Traders", TraderSchema);
 
-module.exports = Trader;
+module.exports = Traders;

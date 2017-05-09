@@ -35,21 +35,22 @@
 		      <span class="icon-bar"></span>
 		      <span class="icon-bar"></span>
 		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
 		    </button>    
 		  </div>
 		  <div class="navbar-collapse collapse">
 		    <ul class="nav navbar-nav" id="navImg">
 		    <!-- with image -->
-		        <li><a href="#"><img src="./assets/images/tandem_logo_nostars_150x143.jpg" alt="TANDEM" height="143" width="150"></a></li>
-			<!-- without image -->
-				<!-- <li><a href="/home"></a></li> -->
+				<li><a href="#"><img src="./assets/images/tandem_logo_nostars_150x143.jpg" alt="TANDEM" height="143" width="150"></a></li>
 		    </ul>
 		    <ul class="nav navbar-nav navbar-right">
+		        <li><a href="/main">Home</a></li>
 		        <li><a href="/join">Join</a></li>
 		        <li><a href="/login">Log In</a></li>
 		        <li><a href="/search">Search</a></li>
-		        <li><a href="/account">Your Account</a></li>
 		        <li><a href="/team">Our Team</a></li>
+		        <li><a href="/reviews">Reviews</a></li>
 		    </ul>
 		  </div>
 		</nav>
@@ -60,26 +61,26 @@
 
 <div class="container">
 
-	<form class="form-horizontal" id="joinForm">
+	<form class="form-horizontal" id="loginForm">
 	  <fieldset>
 	    <legend align="center"><p><h2>Welcome back to TANDEM!</h2></p><p><h3>Please log in below.</h3></p></legend>
 	    <div class="form-group">
-	      <label for="userName" class="col-lg-2 control-label">USER NAME</label>
+	      <label for="userName" class="col-lg-2 control-label">EMAIL</label>
 		      <div class="col-lg-10">
-		        <input type="text" class="form-control" id="inputUser" placeholder="Please Enter Your User Name">
+		        <input type="email" class="form-control" id="inputEmail" placeholder="Please Enter Your Email">
 		      </div>
 	    </div>
 
 	    <div class="form-group">
 	      <label for="inputPassword" class="col-lg-2 control-label">PASSWORD</label>
 		      <div class="col-lg-10">
-		        <input type="text" class="form-control" id="inputLast" placeholder="Please Enter Your Password"> 
+		        <input type="password" class="form-control" id="inputPass" placeholder="Please Enter Your Password"> 
 		      </div>
 	    </div>
 
 	    <div class="form-group">
 	      <div class="col-lg-10 col-lg-offset-2">
-	        <button type="submit" class="btn btn-danger" id="submitJoin">Submit</button>
+	        <button type="submit" class="btn btn-danger" id="submitLogin">Submit</button>
 	      </div>
 	    </div>
 	  </fieldset>
@@ -103,7 +104,7 @@
                 <div class="col-sm-2">
                     <h5>Get started</h5>
                     <ul>
-                        <li><a href="/home">Home</a></li>
+                        <li><a href="/main">Home</a></li>
                         <li><a href="/join">Join</a></li>
                         <li><a href="/login">Log In</a></li>
                     </ul>
@@ -120,7 +121,7 @@
                     <div class="social-networks" align="left">
                         <a href="https://github.com/melymelm/Project3_Barter.git" class="github"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
                     </div>
-                    <button type="button" class="btn btn-default">Contact us</button>
+                    
                 </div>
             </div>
         </div>

@@ -1,0 +1,39 @@
+{
+  "name": "barter",
+  "version": "1.0.0",
+  "description": "final project",
+  "main": "webpack.config.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melymelm/Project3_Barter.git"
+  },
+  "keywords": [
+    "final"
+  ],
+  "author": "Melissa Loggins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melymelm/Project3_Barter/issues"
+  },
+  "homepage": "https://github.com/melymelm/Project3_Barter#readme",
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.8",
+    "morgan": "^1.8.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "webpack": "^2.4.1"
+  }
+}
