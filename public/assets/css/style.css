@@ -188,8 +188,29 @@ td {
 	margin-right: 100px;
 }
 
-/* OUR TEAM PAGE */
+/* REVIEWS PAGE */
 
-/*.circleImage {
-    border-radius: 50%;
+/*#reviewRow {
+	width: 800px;
+	border: 1px solid black;
+    border-radius: 5px;
 }*/
+
+#reviewImage {
+	width: 400px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	margin-left: 175px;
+	margin-right: 0;
+}
+
+#reviewText {
+	font-family: 'Khand', sans-serif;
+	font-size: 35px;
+	width: 400px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	margin-left: 0;
+	margin-right: 25px;
+	font-style: italic;
+}
