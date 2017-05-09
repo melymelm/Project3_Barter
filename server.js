@@ -37,7 +37,8 @@ require("./routes/html-routes.js")(app);
 app.use(express.static("public"));
 
 //MongoDB Config
-mongoose.connect("mongodb://heroku_h94cghc3:7rlnuj8rgev5dmk1jnkdm4398s@ds133241.mlab.com:33241/heroku_h94cghc3");
+mongoose.connect("mongodb://localhost:27017/barter")
+// mongoose.connect("mongodb://heroku_h94cghc3:7rlnuj8rgev5dmk1jnkdm4398s@ds133241.mlab.com:33241/heroku_h94cghc3");
 var db = mongoose.connection;
 
 // Database configuration
