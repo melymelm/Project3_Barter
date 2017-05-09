@@ -23,7 +23,8 @@ var app = express();
 // Use morgan with our app
 app.use(logger("dev"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+// app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Passport init
 app.use(passport.initialize());
