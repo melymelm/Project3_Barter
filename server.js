@@ -23,7 +23,8 @@ var app = express();
 // Use morgan with our app
 app.use(logger("dev"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+// app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Passport init
 app.use(passport.initialize());
@@ -234,6 +235,7 @@ app.get("/traders/:id", function(req, res) {
 
 
 // Set the app to listen on port 3000
-app.listen(3000, function() {
-  console.log("App running on port 3000!");
-});
+app.listen(process.env.PORT || 5000)
+// app.listen(3000, function() {
+//   console.log("App running on port 3000!");
+// });
