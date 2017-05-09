@@ -28,6 +28,7 @@
     "express": "^4.15.2",
     "mongoose": "^4.9.8",
     "morgan": "^1.8.1",
+    "passport": "^0.3.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "webpack": "^2.4.1"
