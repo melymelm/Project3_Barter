@@ -40,6 +40,11 @@ function updateCategories (categories){
         return false;
      }
 
+     if (passInput.val().trim().length < 6) {
+        alert("Your password needs to be at least 6 characters.");
+        return false;
+     }
+
     // Constructing a newPost object to hand to the database
     var signupData = {
       firstName: firstNameInput.val().trim(),
@@ -58,7 +63,7 @@ function updateCategories (categories){
       url: "/api/signup/",
       data: signupData,
       success: function() {
-        //window.location.href = "/search";
+        window.location.href = "/search";
       }
     });
   });
