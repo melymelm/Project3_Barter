@@ -15,6 +15,7 @@ var Trader = require("./models/trader1.js");
 var Trader = mongoose.model('Trader');
 
 require('./config/passport')(passport);
+require('.app/routing/html-routes.js')(app);
 
 
 // Initialize Express
@@ -90,7 +91,7 @@ app.post("/submit", function(req, res) {
 // Routes
 // 1. At the root path, send a simple hello world message to the browser
 app.get("/", function(req, res) {
-  res.send(index.html);
+  res.send(main.html);
 });
 
 // 2. At the "/all" path, display every entry in the barter collection
