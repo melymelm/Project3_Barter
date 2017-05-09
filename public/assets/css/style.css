@@ -214,3 +214,7 @@ td {
 	margin-right: 25px;
 	font-style: italic;
 }
+
+#map {
+	height: 200px;
+}
