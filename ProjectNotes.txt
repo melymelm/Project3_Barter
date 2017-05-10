@@ -1,1 +1,4 @@
 Here is where all our very important notes go!
+
+Formerly on line 188 in search.html (google maps w/out the api key):
+<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
