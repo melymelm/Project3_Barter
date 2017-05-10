@@ -223,4 +223,13 @@ td {
 	font-style: italic;
 }
 
+/* TEAM PAGE */
+
+#teamSection {
+	margin-top: 50;
+	margin-bottom: 50px;
+	margin-left: 150px;
+	margin-right: 50px;
+}
+
 
