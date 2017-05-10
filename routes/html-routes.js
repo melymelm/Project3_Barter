@@ -33,6 +33,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/main.html"));
   }); 
 
+
    // mainPage route loads mainPage.html
   app.get("/main", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/main.html"));
@@ -48,30 +49,28 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname + "/../public/reviews.html"));
   });
 
- 
-
-
   //login page
   app.get("/login", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/login.html"));
   });
+
 
   // searchPage route loads searchPage.html
   app.get("/search", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/search.html"));
   }); 
 
+
   // teamPage route loads teamPage.html)
   app.get("/team", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/team.html"));
   });  
 
+
     // yelp route 
   app.get("/yelp", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/yelp.html"));
   }); 
-
-  
 
 };
 
