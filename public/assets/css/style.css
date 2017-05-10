@@ -182,19 +182,26 @@ td {
 }
 
 #searchSection {
-	margin-top: 50px;
-	margin-bottom: 50px;
-	margin-left: 150px;
-	margin-right: 100px;
+	margin-top: 0;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	margin-right: 50px;
+}
+
+#searchResults {
+	margin-top: 10px;
+	margin-right: 10px;
+	font-size: 25px;
+}
+
+#map {
+	height: 200px;
+	width: 600px;
+	margin-left: 25px;
+	margin-top: 10px;
 }
 
 /* REVIEWS PAGE */
-
-/*#reviewRow {
-	width: 800px;
-	border: 1px solid black;
-    border-radius: 5px;
-}*/
 
 #reviewImage {
 	width: 400px;
@@ -215,6 +222,4 @@ td {
 	font-style: italic;
 }
 
-#map {
-	height: 200px;
-}
+
