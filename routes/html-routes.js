@@ -26,14 +26,19 @@ module.exports = function(app) {
   }); 
 
   // login route loads login.html)
-  app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
-  });  
+  // app.get("/login", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/login.html"));
+  // });  
+
+   // mainPage route loads mainPage.html
+  app.get("/main", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/main.html"));
+   });
+
 
   //join page
   app.get("/join", function(req, res) {
     res.sendFile(path.join(__dirname + "/../public/join.html"));
-
   });
 
   //reviews page
@@ -44,9 +49,13 @@ module.exports = function(app) {
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/main", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname + "/../public/mainPage.html"));
-  });
+  // app.get("/main", isAuthenticated, function(req, res) {
+  //   res.sendFile(path.join(__dirname + "/../public/mainPage.html"));
+  // });
+
+  //login page
+  app.get("/login", function(req, res) {
+   res.sendFile(path.join(__dirname + "/../public/login.html"));
 
   // searchPage route loads searchPage.html
   app.get("/search", function(req, res) {
@@ -54,19 +63,25 @@ module.exports = function(app) {
   });
 
   // mainPage route loads mainPage.html
-  app.get("/main", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/main.html"));
-  });
+  // app.get("/main", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/main.html"));
+  // });
 
-  // login route loads login.html)
-  app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
-  });  
+  // // login route loads login.html)
+  // app.get("/login", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/login.html"));
+  // });  
+});
 
   // teamPage route loads teamPage.html)
   app.get("/team", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/team.html"));
   });  
+
+   // yelp route 
+  app.get("/yelp", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/yelp.html"));
+  }); 
 
 };
 
