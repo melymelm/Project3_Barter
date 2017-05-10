@@ -190,14 +190,15 @@ td {
 
 #searchResults {
 	margin-top: 10px;
-	margin-right: 10px;
+	margin-left: 100px;
+	margin-right: 100px;
 	font-size: 25px;
 }
 
 #map {
 	height: 200px;
-	width: 600px;
-	margin-left: 25px;
+	margin-left: 100px;
+	margin-right: 100px;
 	margin-top: 10px;
 }
 
