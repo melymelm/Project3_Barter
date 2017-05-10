@@ -64,53 +64,53 @@
 			<div class="row" id="searchSection">
 				<table>
 					<tr>
-					   	<td valign="bottom" rowspan="4">
-						   	<a href="#" class="performSearch" id="repairs">
-			  					<div class="nav"><img src="./assets/images/hammer_200x118.jpg" alt="Hammer" height="200" width="118">
+					   	<td valign="bottom" rowspan="6">
+						   	<a href="#searchRow" class="performSearch" id="repairs">
+			  					<div class="nav"><img src="./assets/images/hammer_200x118.jpg" alt="Hammer" height="100" width="auto">
 			   					<p><h4>BUILDING / CONSTRUCTION</h4></p>
 			   					</div>
 							</a>
 						</td>	
 
-						<td valign="bottom" rowspan="4">			
-						    <a href="#" class="performSearch" id="sports">
-			  					<div class="nav"><img src="./assets/images/tennis_150x191.jpg" alt="tennis" height="150" width="191">
+						<td valign="bottom" rowspan="6">			
+						    <a href="#searchRow" class="performSearch" id="sports">
+			  					<div class="nav"><img src="./assets/images/tennis_150x191.jpg" alt="tennis" height="100" width="auto">
 			   					<p><h4>SPORTS LESSONS<br>(EX: Tennis, Golf)</h4></p>
 			   					</div>
 							</a>
 						</td>
 
-						<td valign="bottom" rowspan="4">
-						    <a href="#" class="performSearch" id="cooking">
-			  					<div class="nav"><img src="./assets/images/pie_100x208.jpg" alt="baking" height="100" width="208">
+						<td valign="bottom" rowspan="6">
+						    <a href="#searchRow" class="performSearch" id="cooking">
+			  					<div class="nav"><img src="./assets/images/pie_100x208.jpg" alt="baking" height="50" width="auto">
 			   					<p><h4>BAKING / COOKING</h4></p>
 			   					</div>
 							</a>
 						</td>
 					</tr>
-				</table>
+<!-- 				</table>
 
-				<table>
+				<table> -->
 					<tr>
-						<td valign="bottom" rowspan="4">
-							<a href="#" class="performSearch" id="landscaping">
-			  					<div class="nav"><img src="./assets/images/gnome_200x129.jpg" alt="gardening" height="200" width="129">
+						<td valign="bottom" rowspan="6">
+							<a href="#searchRow" class="performSearch" id="landscaping">
+			  					<div class="nav"><img src="./assets/images/gnome_200x129.jpg" alt="gardening" height="100" width="auto">
 			   					<p><h4>GARDENING</h4></p>
 			   					</div>
 							</a>
 						</td>
 
-						<td valign="bottom" rowspan="4">
-							<a href="#" class="performSearch" id="music">
-			  					<div class="nav"><img src="./assets/images/guitar_250x255.jpg" alt="music" height="250" width="255">
+						<td valign="bottom" rowspan="6">
+							<a href="#searchRow" class="performSearch" id="music">
+			  					<div class="nav"><img src="./assets/images/guitar_250x255.jpg" alt="music" height="150" width="auto">
 			   					<p><h4>MUSIC LESSONS<br>(EX: Guitar, Piano)</h4></p>
 			   					</div>
 							</a>
 						</td>
 
-						<td valign="bottom" rowspan="4">
-							<a href="#" class="performSearch" id="computers">
-			  					<div class="nav"><img src="./assets/images/laptop_150x165.jpg" alt="computer" height="150" width="165">
+						<td valign="bottom" rowspan="6">
+							<a href="#searchRow" class="performSearch" id="computers">
+			  					<div class="nav"><img src="./assets/images/laptop_150x165.jpg" alt="computer" height="100" width="auto">
 			   					<p><h4>CODING / UI DESIGN</h4></p>
 			   					</div>
 							</a>
@@ -125,22 +125,33 @@
 <hr class="style-one">
 
 <div class="container2">
-	<div class="panel">
+	<div class="panel" id="searchRow">
 		<h1 align="center">SEARCH RESULTS:</h1>
 	</div>
 
-	<div class="panel">
-    	<div id="map"></div>
-	</div>
+		<div class="row">
+				<div class="panel">
+			    	<div id="map"></div>
+				</div>
+		</div>
 
-	<div class="panel">
-		<ul class="list-group" id="searchResults">
-		</ul>
-	</div>
+		<div class="row">
 
-	<div class = "panel">
-		<h3 align="center">Didn't find what you were looking for? <a href="/yelp"> Click here</a> to check Yelp.</h3>
-	</div>
+				<div class="panel">
+					<ul class="list-group" id="searchResults">
+					</ul>
+				</div>
+
+		</div>
+
+		<div class="row">
+
+			<h3 align="center">Didn't find what you were looking for? <a href="/yelp"> Click here</a> to check Yelp.</h3>
+
+		</div>
+
+
+		
 	
 <!-- <hr class="style-two"> -->
 	<hr class="style-three">
