@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var path = require("path");
+var User = require("../models/user");
 
 // Get Homepage
 router.get('/', ensureAuthenticated, function(req, res){

@@ -8,7 +8,6 @@ var mongoose = require('mongoose');
 var path = require('path');
 var passportLocalMongoose = require('passport-local-mongoose');
 // TRIPP
-var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -21,13 +20,11 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/barter');
-var db = mongoose.connection;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-// Init App
+// Initialize Express
 var app = express();
 
 // View Engine
@@ -45,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Express Session
 app.use(session({
-    secret: 'secret',
+    secret: 'barter',
     saveUninitialized: true,
     resave: true
 }));
@@ -89,7 +86,10 @@ app.use(function (req, res, next) {
 app.use('/', routes);
 app.use('/users', users);
 
-// TRIPP
+// END TRIPP
+// END TRIPP
+// END TRIPP
+// END TRIPP
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
@@ -99,15 +99,6 @@ var Traders = require("./models/trader1.js");
 // var Trader = mongoose.model('Trader');
 
 require('./config/passport')(passport);
-require('.app/routing/html-routes.js')(app);
-
-
-//Passport Initialization
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Initialize Express
-var app = express();
 
 // Use morgan with our app
 app.use(logger("dev"));
@@ -115,9 +106,6 @@ app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Passport init
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Routes
 require("./routes/html-routes.js")(app);
@@ -290,43 +278,6 @@ app.get("/traders/:id", function(req, res) {
   });
 });
 
-// // 3. At the "/name" path, display every entry in the barter collection, sorted by name
-// app.get("/name", function(req, res) {
-//   // Query: In our database, go to the barter collection, then "find" everything,
-//   // but this time, sort it by name (1 means ascending order)
-//   db.traders.find().sort({ name: 1 }, function(error, found) {
-//     // Log any errors if the server encounters one
-//     if (error) {
-//       console.log(error);
-//     }
-//     // Otherwise, send the result of this query to the browser
-//     else {
-//       res.json(found);
-//     }
-//   });
-// });
-
-// No weight path. 
-// 4. At the "/weight" path, display every entry in the barter collection, sorted by weight
-// app.get("/weight", function(req, res) {
-//   // Query: In our database, go to the animals collection, then "find" everything,
-//   // but this time, sort it by weight (-1 means descending order)
-//   db.traders.find().sort({ weight: -1 }, function(error, found) {
-//     // Log any errors if the server encounters one
-//     if (error) {
-//       console.log(error);
-//     }
-//     // Otherwise, send the result of this query to the browser
-//     else {
-//       res.json(found);
-//     }
-//   });
-// });
-
-
 
 // Set the app to listen on port 5000
-app.listen(process.env.PORT || 5000)
-// app.listen(3000, function() {
-//   console.log("App running on port 5000!");
-// });
+app.listen(process.env.PORT || 5000);
