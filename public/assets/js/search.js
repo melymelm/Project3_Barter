@@ -24,7 +24,7 @@ $(document).ready(function() {
   	  var searchData = [result.businessName, result.fullName, result.phoneNumber, result.email];
   	  var searchText = searchData.join(', ');
         $('<li class="list-group-item"><h3 align="center"></h3></li>').html(searchText).appendTo(results);
-
+        console.log({searchData: typeof searchData})
         // TODO add a marker to google map for each search result
 
         // First, use zipcode to find lat/long (either here or when user signs up)
