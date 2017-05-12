@@ -24,13 +24,9 @@ $(document).ready(function() {
   	  var searchData = [result.businessName, result.fullName, result.phoneNumber, result.email];
   	  var searchText = searchData.join(', ');
         $('<li class="list-group-item"><h3 align="center"></h3></li>').html(searchText).appendTo(results);
-        console.log({searchData: typeof searchData})
-        // TODO add a marker to google map for each search result
-
-        // First, use zipcode to find lat/long (either here or when user signs up)
-        // https://maps.googleapis.com/maps/api/geocode/json?country=US&key=AIzaSyDwdkW-EIpjzeIIZ2FYFmquuQ0kGLPgoeA&zip=
 
         geocoder.geocode({address: result.zipCode}, function(results, status) {
+          console.log({searchData: typeof searchData})
           if (status === 'OK') {
             if (results[0]) {
               var marker = new google.maps.Marker({
@@ -45,13 +41,6 @@ $(document).ready(function() {
             console.log('Geocoder failed due to: ' + status);
           }
         });
-
-        /*
-          var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-        */
     });
   }
 });
