@@ -3,7 +3,9 @@
 var express = require("express");
 var bodyParser = require('body-parser');
 var logger = require('morgan');
+var session = require("express-session");
 var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy
 var mongoose = require('mongoose');
 var path = require('path');
 var isAuthenticated = require("./config/middleware/isAuthenticated");
@@ -29,8 +31,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Passport init
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 // Routes
 require("./routes/html-routes.js")(app);
@@ -58,6 +62,14 @@ db.once("open", function() {
 
 // Routes
 // ======
+
+app.post('/api/login', 
+  passport.authenticate('local'), //, { failureRedirect: '/api/login' }),
+  function(req, res) {
+    console.log('logged in');
+    res.json({'message': 'login successful'})
+    //res.redirect('/search');
+  });
 
 app.post("/api/signup", function(req, res) {
   console.log(req.body);
@@ -115,10 +127,10 @@ app.get("/all", function(req, res) {
 
 
 // here get the category the user clicks on, music, food, sports, coding, education, etc...in the request parameter. and then make the mongo call.
-app.get('/categories/:category', function (req, res) {
+app.get('/categories/:category', isAuthenticated, function (req, res) {
 
   console.log(req.params);
-// var category =
+  console.log(req.user)
 // make the mongo query/call to fina all users that have that category that the user is searching for.
   Traders.find(req.params, function(error, dataFound) {
     // Log any errors if the server encounters one
@@ -143,7 +155,7 @@ app.get('/categories/:category', function (req, res) {
 })
 
 // here get the category the user clicks on, music, food, sports, coding, education, etc...in the request parameter. and then make the mongo call.
-app.get('/api/categories', isAuthenticated, function (req, res) {
+app.get('/api/categories', function (req, res) {
 
   console.log(req.params);
 // var category =
