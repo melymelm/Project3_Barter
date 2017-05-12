@@ -26,7 +26,6 @@ $(document).ready(function() {
         $('<li class="list-group-item"><h3 align="center"></h3></li>').html(searchText).appendTo(results);
 
         geocoder.geocode({address: result.zipCode}, function(results, status) {
-          console.log({searchData: typeof searchData})
           if (status === 'OK') {
             if (results[0]) {
               var marker = new google.maps.Marker({
