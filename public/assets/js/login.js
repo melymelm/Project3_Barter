@@ -29,14 +29,14 @@ $(document).ready(function() {
     $.post("/api/login", {
       email: email,
       password: password
-    }).then(function(data) {
-      window.location.replace(data);
+    }, function(data, textStatus, jqxhr) {
+      console.log(data, textStatus, jqxhr);
+
+      window.location.href = "/search";
       // If there's an error, log the error
-    }).catch(function(err) {
-      console.log(err);
     });
   }
-
+  
 });
 
 
