@@ -6,6 +6,8 @@ var logger = require('morgan');
 var passport = require('passport');
 var mongoose = require('mongoose');
 var path = require('path');
+var isAuthenticated = require("./config/middleware/isAuthenticated");
+
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
@@ -32,7 +34,6 @@ app.use(passport.session());
 
 // Routes
 require("./routes/html-routes.js")(app);
-// require("./routes/api-routes.js")(app);
 
 // Set up a static folder (public) for our web app
 app.use(express.static("public"));
@@ -64,11 +65,7 @@ app.post("/api/signup", function(req, res) {
   var user = new Traders(req.body);
   console.log('new trader: ' + JSON.stringify(user));
 
-
-/* OUR CUSTOM METHODS
- * (methods created in the userModel.js)
- * -/-/-/-/-/-/-/-/-/ */
-
+  // Custom Methods
   // Call the "getFullName" method from the user Model
   user.getFullName();
 
@@ -146,7 +143,7 @@ app.get('/categories/:category', function (req, res) {
 })
 
 // here get the category the user clicks on, music, food, sports, coding, education, etc...in the request parameter. and then make the mongo call.
-app.get('/api/categories', function (req, res) {
+app.get('/api/categories', isAuthenticated, function (req, res) {
 
   console.log(req.params);
 // var category =
