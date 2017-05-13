@@ -16,7 +16,6 @@ mongoose.Promise = Promise;
 
 // Require our userModel model
 var Traders = require("./models/trader1.js");
-// var Trader = mongoose.model('Trader');
 
 require('./config/passport')(passport);
 
@@ -107,7 +106,6 @@ app.post("/api/signup", function(req, res) {
 // 1. At the root path, send a simple hello world message to the browser
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "./public/main.html"));
-  // res.render("./links/index.html");
 });
 
 // 2. At the "/all" path, display every entry in the barter collection
@@ -141,25 +139,15 @@ app.get('/categories/:category', isAuthenticated, function (req, res) {
     else {
       res.json(dataFound);
     }
-  });
-// categories should be an array of the specialties offered in our db
-
-// figure out how to send the info back to the front end
-
-// might be best to go with handlebars
-
-
-
-  // res.send("Hit categories route"); 
-
+  }); 
 })
 
 // here get the category the user clicks on, music, food, sports, coding, education, etc...in the request parameter. and then make the mongo call.
 app.get('/api/categories', function (req, res) {
 
   console.log(req.params);
-// var category =
-// make the mongo query/call to fina all users that have that category that the user is searching for.
+
+// make the mongo query/call to find all users that have that category that the user is searching for.
   var dataFound = [{
         name: "music",
         title: "Music Lessons (EX: Guitar, Piano)"
@@ -208,43 +196,6 @@ app.get("/traders/:id", function(req, res) {
   });
 });
 
-// // 3. At the "/name" path, display every entry in the barter collection, sorted by name
-// app.get("/name", function(req, res) {
-//   // Query: In our database, go to the barter collection, then "find" everything,
-//   // but this time, sort it by name (1 means ascending order)
-//   db.traders.find().sort({ name: 1 }, function(error, found) {
-//     // Log any errors if the server encounters one
-//     if (error) {
-//       console.log(error);
-//     }
-//     // Otherwise, send the result of this query to the browser
-//     else {
-//       res.json(found);
-//     }
-//   });
-// });
-
-// No weight path. 
-// 4. At the "/weight" path, display every entry in the barter collection, sorted by weight
-// app.get("/weight", function(req, res) {
-//   // Query: In our database, go to the animals collection, then "find" everything,
-//   // but this time, sort it by weight (-1 means descending order)
-//   db.traders.find().sort({ weight: -1 }, function(error, found) {
-//     // Log any errors if the server encounters one
-//     if (error) {
-//       console.log(error);
-//     }
-//     // Otherwise, send the result of this query to the browser
-//     else {
-//       res.json(found);
-//     }
-//   });
-// });
-
-
-
 // Set the app to listen on port 5000
 app.listen(process.env.PORT || 5000)
-// app.listen(3000, function() {
-//   console.log("App running on port 5000!");
-// });
+

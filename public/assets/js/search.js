@@ -15,21 +15,18 @@ $(document).ready(function() {
   }
 
   $( ".performSearch" ).click(performSearch)
-
+  // Update Search Results
   function updateSearchResults (searchData){
     var results = $('#searchResults');
     results.empty();
- 
+    
+    // Search results joined and displayed.
     searchData.forEach(function (result) {
   	  var searchData = [result.businessName, result.fullName, result.phoneNumber, result.email];
   	  var searchText = searchData.join(', ');
         $('<li class="list-group-item"><h3 align="center"></h3></li>').html(searchText).appendTo(results);
 
-        // TODO add a marker to google map for each search result
-
-        // First, use zipcode to find lat/long (either here or when user signs up)
-        // https://maps.googleapis.com/maps/api/geocode/json?country=US&key=AIzaSyDwdkW-EIpjzeIIZ2FYFmquuQ0kGLPgoeA&zip=
-
+        // Markers Making, Title & Location
         geocoder.geocode({address: result.zipCode}, function(results, status) {
           if (status === 'OK') {
             if (results[0]) {
@@ -45,13 +42,6 @@ $(document).ready(function() {
             console.log('Geocoder failed due to: ' + status);
           }
         });
-
-        /*
-          var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-        */
     });
   }
 });
@@ -66,6 +56,7 @@ function centerMap(latitude, longitude) {
 	});
 }
 
+// Initialize Map & get lat & long
 function initMap() {
   geocoder = new google.maps.Geocoder;
 	if ("geolocation" in navigator) {
@@ -75,7 +66,7 @@ function initMap() {
 	} else {
 	  console.log('geolocation is unavailable');
 	}
-
+  // Time out if user does not allow access to google
 	setTimeout(function() {
         if (!map) {
           console.log("No confirmation from user, using fallback");
