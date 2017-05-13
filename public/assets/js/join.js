@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   console.log("join.js: Inside ready function");
-
+// JSON of categories
     $.get({
       url: "/api/categories",
       success: function(data) {
@@ -10,7 +10,7 @@ $(document).ready(function() {
 
       }
     })
-
+// Update cat from new user
 function updateCategories (categories){
     var select = $('#servSelect');
     select.empty();
